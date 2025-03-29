@@ -139,11 +139,9 @@ export default function InspirationStation() {
     { id: 1, img: '/kite.webp', name: 'KITES', className: 'w-40 h-22 p-2 bg-white rounded-lg' }, // Special styling for KITES
     { id: 2, img: '/future school.webp', name: 'FUTURE SCHOOL' },
     { id: 3, img: '/Tinkerhub.webp', name: 'TINKERHUB', className: 'w-34 h-15 bg-white rounded-lg p-0' },
-    { id: 4, img: '/Tinkerhub.webp', name: 'MAKER STATION', className: 'w-34 h-15 bg-white rounded-lg p-0' },
     { id: 5, img: '/IEEE.svg', name: 'IEEE' },
     { id: 6, img: '/either.webp', name: 'ETHERINDIA', className: 'w-32 h-15 bg-white rounded-lg p-0'},
-    { id: 7, img: '/Mask group.png', name: 'KSUM' },
-    { id: 8, img: 'https://educatetoday.net/assets/site/school_profile.jpg', name: 'Govt. Technical Higher Secondary School, Sreekaryam' }
+    { id: 7, img: '/Mask group.png', name: 'KSUM' }
   ].map((partner) => (
     <div
       key={partner.id}
