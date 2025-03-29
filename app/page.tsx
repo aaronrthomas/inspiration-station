@@ -26,12 +26,12 @@ export default function InspirationStation() {
       <Link href="#partners" className="text-[#E787FC] hover:text-[#f5b3ff] transition animate-fade-in">
         Partners
       </Link>
-      <Link href="#heroes" className="text-[#E787FC] hover:text-[#f5b3ff] transition animate-fade-in">
+      {/* <Link href="#heroes" className="text-[#E787FC] hover:text-[#f5b3ff] transition animate-fade-in">
         Unsaid Heroes
-      </Link>
-      <Link href="#achievers" className="text-[#E787FC] hover:text-[#f5b3ff] transition animate-fade-in">
+      </Link> */}
+      {/* <Link href="#achievers" className="text-[#E787FC] hover:text-[#f5b3ff] transition animate-fade-in">
         High Achievers
-      </Link>
+      </Link> */}
     </nav>
   </div>
 </header>
@@ -136,14 +136,14 @@ export default function InspirationStation() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
   {[
-    { id: 1, img: '/kite.webp', name: 'KITES' },
+    { id: 1, img: '/kite.webp', name: 'KITES', className: 'w-40 h-22 p-2 bg-white rounded-lg' }, // Special styling for KITES
     { id: 2, img: '/future school.webp', name: 'FUTURE SCHOOL' },
-    { id: 3, img: '/kdisc.svg', name: 'TINKERHUB' },
-    { id: 4, img: '/kkem.svg', name: 'MAKERSTATION' },
-    { id: 5, img: '/mulearn.svg', name: 'IEEE' },
-    { id: 6, img: '/either.webp', name: 'ETHERINDIA' },
-    { id: 7, img: '/technopark.svg', name: 'DRUG FREE INDIA' },
-    { id: 8, img: '/technopark.svg', name: 'Govt. Technical Higher Secondary School, Sreekaryam' }
+    { id: 3, img: '/Tinkerhub.webp', name: 'TINKERHUB', className: 'w-34 h-15 bg-white rounded-lg p-0' },
+    { id: 4, img: '/Tinkerhub.webp', name: 'MAKER STATION', className: 'w-34 h-15 bg-white rounded-lg p-0' },
+    { id: 5, img: '/IEEE.svg', name: 'IEEE' },
+    { id: 6, img: '/either.webp', name: 'ETHERINDIA', className: 'w-32 h-15 bg-white rounded-lg p-0'},
+    { id: 7, img: '/Mask group.png', name: 'KSUM' },
+    { id: 8, img: 'https://educatetoday.net/assets/site/school_profile.jpg', name: 'Govt. Technical Higher Secondary School, Sreekaryam' }
   ].map((partner) => (
     <div
       key={partner.id}
@@ -173,14 +173,19 @@ export default function InspirationStation() {
       }}
     >
       <div className="text-center relative z-10 transition-transform duration-300 group-hover:scale-110">
-        <div className="w-32 h-20 bg-white/10 backdrop-blur-sm mx-auto flex items-center justify-center mb-4 
-          shadow-lg transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(231,135,252,0.3)] overflow-hidden">
+        <div className={`${
+          partner.id === 1 || partner.id === 3 || partner.id === 4 || partner.id === 6 ? partner.className : 'w-32 h-20'
+        } bg-white/10 backdrop-blur-sm mx-auto flex items-center justify-center mb-4 
+          shadow-lg transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(231,135,252,0.3)] overflow-hidden`}>
           <Image
             src={partner.img}
             alt={partner.name}
-            width={128}
-            height={80}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+            width={partner.id === 7 ? 200 : partner.id === 1 || partner.id === 3 || partner.id === 4 || partner.id === 6 ? 136 : 128}
+            height={partner.id === 7 ? 140 : partner.id === 1 || partner.id === 3 || partner.id === 4 || partner.id === 6 ? 60 : 80}
+            className={`${
+              partner.id === 7 ? 'scale-75 object-contain' :
+              partner.id === 1 || partner.id === 3 || partner.id === 4 || partner.id === 6 ? 'w-full h-full object-cover' : 'object-contain'
+            } transition-transform duration-300 group-hover:scale-110`}
           />
         </div>
         <h3 className="font-medium text-[#d8b4ff] transition-all duration-300 group-hover:text-[#E787FC]">
@@ -194,8 +199,8 @@ export default function InspirationStation() {
         </div>
       </section>
 
-      {/* Unsaid Heroes */}
-      <section id="heroes" className="py-16 bg-[#0c0914] mt-16">
+      
+      {/* <section id="heroes" className="py-16 bg-[#0c0914] mt-16">
         <div className="container mx-auto px-4 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-[#E787FC]/5 to-[#6e3a9c]/5 rounded-3xl backdrop-blur-xl border border-white/5"></div>
           <div className="relative z-10 p-8">
@@ -262,7 +267,7 @@ export default function InspirationStation() {
         </div>
       </section>
 
-      {/* High Achievers */}
+      
       <section id="achievers" className="py-16 bg-[#1a0f2e]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
@@ -272,7 +277,7 @@ export default function InspirationStation() {
             </div>
           </div>
 
-          {/* Achievers Cards */}
+          
           <div className="grid md:grid-cols-3 gap-6">
             {[...Array(9)].map((_, index) => (
               <Card key={index} className="bg-[#2a1745] border-[#6e3a9c]">
@@ -310,7 +315,7 @@ export default function InspirationStation() {
         </div>
       </section>
 
-      {/* Content Section (Right Side) */}
+      
       <section className="py-16 bg-[#1a0f2e]">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
@@ -360,7 +365,7 @@ export default function InspirationStation() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-gradient-to-b from-[#0c0914] to-[#1a0f2e] py-12 border-t border-[#6e3a9c]">
@@ -377,17 +382,6 @@ export default function InspirationStation() {
           Celebrating and showcasing the exceptional talents of students across Kerala. Join us in inspiring the next
           generation of achievers.
         </p>
-        <div className="mt-4 flex gap-3">
-          <Link href="#" className="text-[#E787FC] hover:text-[#f5b3ff]">
-            <Heart className="h-6 w-6" />
-          </Link>
-          <Link href="#" className="text-[#E787FC] hover:text-[#f5b3ff]">
-            <Users className="h-6 w-6" />
-          </Link>
-          <Link href="#" className="text-[#E787FC] hover:text-[#f5b3ff]">
-            <BookOpen className="h-6 w-6" />
-          </Link>
-        </div>
       </div>
 
       {/* Quick Links */}
@@ -395,23 +389,13 @@ export default function InspirationStation() {
         <h3 className="font-bold text-[#E787FC] mb-4">Quick Links</h3>
         <ul className="space-y-2">
           <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
+            <Link href="#about" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
               About Us
             </Link>
           </li>
           <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
+            <Link href="#partners" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
               Our Partners
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-              Success Stories
-            </Link>
-          </li>
-          <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-              Contact Us
             </Link>
           </li>
         </ul>
@@ -421,25 +405,32 @@ export default function InspirationStation() {
       <div>
         <h3 className="font-bold text-[#E787FC] mb-4">Districts</h3>
         <ul className="space-y-2">
-          <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-              Thiruvananthapuram
-            </Link>
+          <li className="text-[#d8b4ff] text-sm">
+            Thiruvananthapuram
           </li>
-          <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-              Kochi
-            </Link>
+          <li className="text-[#d8b4ff] text-sm">
+            Kochi
           </li>
-          <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-              Kozhikode
-            </Link>
+          <li className="text-[#d8b4ff] text-sm">
+            Kozhikode
           </li>
-          <li>
-            <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-              View All Districts
-            </Link>
+          <li className="text-[#d8b4ff] text-sm">
+            Thrissur
+          </li>
+          <li className="text-[#d8b4ff] text-sm">
+            Malappuram
+          </li>
+          <li className="text-[#d8b4ff] text-sm">
+            Kozhikode
+          </li>
+          <li className="text-[#d8b4ff] text-sm">
+            Wayanad
+          </li>
+          <li className="text-[#d8b4ff] text-sm">
+            Kannur
+          </li>
+          <li className="text-[#d8b4ff] text-sm">
+            Kasaragod
           </li>
         </ul>
       </div>
@@ -451,11 +442,8 @@ export default function InspirationStation() {
           Join our community and stay updated with the latest success stories and events.
         </p>
         <Button className="bg-[#6e3a9c] hover:bg-[#8347bd] text-white w-full mb-4">
-          Subscribe
+        <Link href="https://mulearn.org/">Join Us</Link>
         </Button>
-        <p className="text-[#d8b4ff] text-xs">
-          We respect your privacy. Unsubscribe anytime.
-        </p>
       </div>
     </div>
 
@@ -463,18 +451,10 @@ export default function InspirationStation() {
     <div className="border-t border-[#6e3a9c] mt-12"></div>
 
     {/* Bottom Section */}
-    <div className="mt-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+    <div className="mt-6 flex justify-center items-center text-center">
       <p className="text-[#d8b4ff] text-sm">
         &copy; {new Date().getFullYear()} Inspiration Station. All rights reserved.
       </p>
-      <div className="flex gap-4 mt-4 md:mt-0">
-        <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-          Privacy Policy
-        </Link>
-        <Link href="#" className="text-[#d8b4ff] hover:text-[#f5b3ff] text-sm">
-          Terms of Service
-        </Link>
-      </div>
     </div>
   </div>
 </footer>
