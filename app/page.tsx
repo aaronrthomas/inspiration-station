@@ -75,7 +75,7 @@ export default function InspirationStation() {
         {/* Buttons */}
         <div className="flex gap-4 mt-6 justify-center md:justify-start">
           <Button className="bg-white/10 backdrop-blur-md border border-white/30 rounded-lg shadow-lg animate-fade-in px-6 py-3">
-            <Link href="https://mulearn.org/">Join Us</Link>
+            <Link href="https://app.mulearn.org/">Join Us</Link>
           </Button>
           <Dialog>
             <DialogTrigger asChild>
@@ -440,7 +440,7 @@ export default function InspirationStation() {
           Join our community and stay updated with the latest success stories and events.
         </p>
         <Button className="bg-[#6e3a9c] hover:bg-[#8347bd] text-white w-full mb-4">
-        <Link href="https://mulearn.org/">Join Us</Link>
+        <Link href="https://app.mulearn.org/">Join Us</Link>
         </Button>
       </div>
     </div>
